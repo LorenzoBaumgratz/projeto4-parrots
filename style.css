@@ -56,12 +56,11 @@ h1{
   .container-cartas{
     
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 117px;
-    margin-right: 34px;
+    gap: 34px;
+    width: 60%;
   }
 
   .conteudo{
