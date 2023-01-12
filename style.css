@@ -36,18 +36,23 @@ h1{
     transform-style: preserve-3d;
   }
 
-  .back-face {
+  
+
+   .back-face {
     transform: rotateY(180deg);
+    
+
   }
 
-  .card:hover .back-face {
+   .front-face {
+    transform: rotateY(0deg);
+    
+  }
+  .mostrar{
+    backface-visibility: visible;
     transform: rotateY(0deg);
   }
-
-  .card:hover .front-face {
-    transform: rotateY(-180deg);
-  }
-
+  
   img{
     width: 100px;
     height: 100px;

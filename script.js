@@ -27,8 +27,12 @@ for(let i=0;i<qnt;i++){
 }
 
 
-/*function ativar(carta){
+function selecionar(carta){
     let x=carta.querySelector(".back-face");
-    x.classList.remove("back-face");
-}*/
+    let y=carta.querySelector(".face");
+    x.classList.toggle("mostrar");
+    
+   
+    
+}
 
