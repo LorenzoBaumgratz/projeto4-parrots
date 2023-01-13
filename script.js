@@ -10,12 +10,12 @@ let aux=[];
 for(let i=1;i<=7;i++){
     for(let j=0;j<2;j++){
         let cartaMOD=`
-            <div onclick="selecionar(this)" class="card">
+            <div data-test="card" onclick="selecionar(this)" class="card">
                 <div class="front-face face">
-                    <img src="./img/back.png" alt="">
+                    <img data-test="face-down-image" src="./img/back.png" alt="">
                 </div>
                 <div class="back-face face">
-                    <img src="./img/carta${i}.gif" alt="">
+                    <img data-test="face-up-image" src="./img/carta${i}.gif" alt="">
                 </div>
             </div> 
 
