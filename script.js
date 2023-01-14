@@ -62,7 +62,8 @@ function verificar(selecionado){
 }
 
 function verificar2(x){
-    
+let getAnswer=''; 
+
     if(auxSelect%2!==0){
     verificar(x);
     } else{
@@ -78,13 +79,23 @@ function verificar2(x){
             fim+=2;
             if(fim==qnt){
                 clearInterval(timeInterval);
-                setTimeout(alert,1000,`Você ganhou em ${auxSelect-1} jogadas! A duração do jogo foi de ${seg+(min*60)} segundos!`);
+                alert(`Você ganhou em ${auxSelect-1} jogadas! A duração do jogo foi de ${seg+(min*60)} segundos!`);
+                getAnswer=prompt("Reiniciar?");
+                    while(getAnswer!="sim" && getAnswer!="não"){
+                    getAnswer=prompt("Reiniciar?");
+                    }
+                        if(getAnswer=="sim"){
+                           location.reload(true);
+                        }
             }
         }
 
     }   
 
 }
+
+
+
 let seg=0;
 let min=0;
 function timer(){
