@@ -79,7 +79,7 @@ let getAnswer='';
             fim+=2;
             if(fim==qnt){
                 clearInterval(timeInterval);
-                alert(`Você ganhou em ${auxSelect-1} jogadas! A duração do jogo foi de ${seg+(min*60)} segundos!`);
+                alert(`Você ganhou em ${auxSelect-1} jogadas! A duração do jogo foi de ${seg} segundos!`);
                 getAnswer=prompt("Reiniciar?");
                     while(getAnswer!="sim" && getAnswer!="não"){
                     getAnswer=prompt("Reiniciar?");
@@ -97,16 +97,11 @@ let getAnswer='';
 
 
 let seg=0;
-let min=0;
+
 function timer(){
     document.querySelector(".clock").innerHTML=`
-    <span>${min.toString().padStart(2,'0')}:${seg.toString().padStart(2,'0')}</span>`
+    <span data-test="timer">${seg}</span>`;
     seg++;
-    if(seg>=60){
-        seg=0;
-        min++;
-        
-    }
 }
 
 let timeInterval=setInterval(timer,1000);
