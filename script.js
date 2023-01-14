@@ -77,11 +77,27 @@ function verificar2(x){
             x.removeAttribute("onclick");
             fim+=2;
             if(fim==qnt){
-                setTimeout(alert,1000,`Você ganhou em ${auxSelect-1} jogadas` );
+                clearInterval(timeInterval);
+                setTimeout(alert,1000,`Você ganhou em ${auxSelect-1} jogadas! A duração do jogo foi de ${seg+(min*60)} segundos!`);
             }
         }
 
     }   
 
 }
+let seg=0;
+let min=0;
+function timer(){
+    document.querySelector(".clock").innerHTML=`
+    <span>${min.toString().padStart(2,'0')}:${seg.toString().padStart(2,'0')}</span>`
+    seg++;
+    if(seg>=60){
+        seg=0;
+        min++;
+        
+    }
+}
+
+let timeInterval=setInterval(timer,1000);
+
 
