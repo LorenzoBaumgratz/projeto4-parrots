@@ -44,8 +44,7 @@ for(let i=0;i<qnt;i++){
 function selecionar(carta){
     let x=carta.querySelector(".back-face");
     let y=carta.querySelector(".face");
-    x.classList.toggle("mostrar");  
-
+    x.classList.toggle("mostrar"); 
 }
 
 let Selecionada1;
@@ -55,6 +54,7 @@ let click1;
 let fim=0;
 
 function verificar(selecionado){
+   
     Selecionada1=selecionado.querySelector(".back-face img").getAttribute('src');
     auxSelect++;
     selecionar(selecionado);
@@ -79,14 +79,7 @@ let getAnswer='';
             fim+=2;
             if(fim==qnt){
                 clearInterval(timeInterval);
-                alert(`Você ganhou em ${auxSelect-1} jogadas! A duração do jogo foi de ${seg} segundos!`);
-                getAnswer=prompt("Reiniciar?");
-                    while(getAnswer!="sim" && getAnswer!="não"){
-                    getAnswer=prompt("Reiniciar?");
-                    }
-                        if(getAnswer=="sim"){
-                           location.reload(true);
-                        }
+                setTimeout(delayContinuar,1000);
             }
         }
 
@@ -94,16 +87,23 @@ let getAnswer='';
 
 }
 
-
-
 let seg=0;
 
 function timer(){
+    seg++;
     document.querySelector(".clock").innerHTML=`
     <span data-test="timer">${seg}</span>`;
-    seg++;
 }
 
 let timeInterval=setInterval(timer,1000);
 
-
+function delayContinuar(){
+    alert(`Você ganhou em ${auxSelect-1} jogadas! A duração do jogo foi de ${seg} segundos!`);
+    getAnswer=prompt("Reiniciar?");
+    while(getAnswer!="sim" && getAnswer!="não"){
+        getAnswer=prompt("Reiniciar?");
+        }
+            if(getAnswer=="sim"){
+               location.reload(true);
+            }
+}
